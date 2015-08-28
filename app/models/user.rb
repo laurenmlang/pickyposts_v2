@@ -14,7 +14,6 @@ has_many :friends
 
   def friendslist
     @graph = facebook
-    # raise @graph.get_connections("me", "friends", api_version: "v2.0").inspect
     response = @graph.get_connections("me", "friends", api_version: "v2.0").each do |hash|
       self.friends.find_or_create_by(name: hash['name'],uid: hash['id'],user_id: self.id)
       end
