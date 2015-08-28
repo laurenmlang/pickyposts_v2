@@ -10,12 +10,16 @@
       <tr>
 
         <th>Friend's Name</th>
+        <th>Action</th>
 
       </tr>
 
       <% @current_user_friends.each do |friend| %>
       <tr>
         <td> <%= friend["name"] %></td>
+        <td> <a href="/" class="btn btn-primary">
+        Back
+      </a></td>
 
 
       </tr>

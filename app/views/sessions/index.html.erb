@@ -1,7 +1,12 @@
 <div class="page-header">
   <h1>Welcome to PickyPosts! </h1>
 
-  <a href="/friends" class="btn btn-lg btn-success">View Friends</a>
+    <% if current_user %>
+     <p> Hi <%= current_user.name %>!</p>
+      <a href="/friends" class="btn btn-lg btn-success">View Friends</a>
+    <% else %>
+      <a href="/auth/facebook" class = "btn btn-lg btn-success">Sign in with Facebook</a>
+    <% end %>
 
 </div>
 

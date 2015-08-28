@@ -10,19 +10,15 @@ has_many :friends
     end
   end
 
-# raise response.inspect
-
   def friendslist
     @graph = facebook
     response = @graph.get_connections("me", "friends", api_version: "v2.0").each do |hash|
       self.friends.find_or_create_by(name: hash['name'],uid: hash['id'],user_id: self.id)
       end
-
   end
 
   private
   def facebook
-  # access_token = User.find(session[:user_id]).access_token
   @facebook ||= Koala::Facebook::API.new(access_token)
   end
 
