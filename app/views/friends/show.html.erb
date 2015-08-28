@@ -5,8 +5,6 @@
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
-      <dt>Uid</dt>
-      <dd><%= @friend.uid %></dd>
 
       <dt>Name</dt>
       <dd><%= @friend.name %></dd>
@@ -17,12 +15,7 @@
       <a href="/friends" class="btn btn-primary">
         Back
       </a>
-      <a href="/friends/<%= @friend.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_friend/<%= @friend.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+
     </div>
   </div>
 </div>

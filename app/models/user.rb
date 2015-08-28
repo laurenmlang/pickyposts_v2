@@ -16,8 +16,8 @@ has_many :friends
     @graph = facebook
     # raise @graph.get_connections("me", "friends", api_version: "v2.0").inspect
     response = @graph.get_connections("me", "friends", api_version: "v2.0").each do |hash|
-      self.friends.find_or_create_by_name_and_uid_and_user_id(hash['name'], hash['id'], self.id)
-    end
+      self.friends.find_or_create_by(name: hash['name'],uid: hash['id'],user_id: self.id)
+      end
 
   end
 
